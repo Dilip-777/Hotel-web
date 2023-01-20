@@ -215,10 +215,15 @@ export function Navbar() {
             <ActionToggle />
 
             <Group className={classes.hiddenMobile}>
-              <Button onClick={() => push("/signin")} variant="default">
+              <Button
+                onClick={() => (window.location.href = "/signin")}
+                variant="default"
+              >
                 Log in
               </Button>
-              <Button onClick={() => push("/signup")}>Sign up</Button>
+              <Button onClick={() => (window.location.href = "/signup")}>
+                Sign up
+              </Button>
             </Group>
           </Group>
 
@@ -270,10 +275,15 @@ export function Navbar() {
           />
 
           <Group position="center" grow pb="xl" px="md">
-            <Button onClick={() => push("/signin")} variant="default">
+            <Button
+              onClick={() => (window.location.href = "/signin")}
+              variant="default"
+            >
               Log in
             </Button>
-            <Button onClick={() => push("/signup")}>Sign up</Button>
+            <Button onClick={() => (window.location.href = "/signup")}>
+              Sign up
+            </Button>
           </Group>
         </ScrollArea>
       </Drawer>

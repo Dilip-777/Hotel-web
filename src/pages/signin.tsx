@@ -32,7 +32,8 @@ export default function SignIn() {
           size="sm"
           onClick={(event) => {
             event.preventDefault();
-            push("/signup");
+            // push("/signup");
+            window.location.href = "/signup";
           }}
         >
           Create account

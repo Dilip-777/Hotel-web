@@ -33,7 +33,7 @@ export default function SignIn() {
           size="sm"
           onClick={(event) => {
             event.preventDefault();
-            push("/signin");
+            window.location.href = "/signin";
           }}
         >
           Login

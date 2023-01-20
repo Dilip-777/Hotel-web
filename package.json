@@ -17,6 +17,7 @@
     "@mantine/ds": "^5.10.1",
     "@mantine/hooks": "^5.10.1",
     "@mantine/next": "^5.10.1",
+    "@mantine/nprogress": "^5.10.1",
     "@next/font": "13.1.2",
     "@tabler/icons": "^1.119.0",
     "@types/node": "18.11.18",
