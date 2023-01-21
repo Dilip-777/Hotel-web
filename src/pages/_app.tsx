@@ -11,6 +11,7 @@ import { Navbar } from "@/components/navbar";
 import { useState } from "react";
 import { Footer } from "@/components/Footer";
 import { useRouter } from "next/router";
+import "../styles/globals.css";
 
 export default function App(props: AppProps) {
   const [colorScheme, setColorScheme] = useState<ColorScheme>("dark");
