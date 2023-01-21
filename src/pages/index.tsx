@@ -19,7 +19,8 @@ import { useState } from "react";
 import { DateRangePickerValue, DateRangePicker } from "@mantine/dates";
 import { BannerCard } from "@/components/Home/bannerCard";
 import { Faqs } from "@/components/Home/Accordion";
-import { TopCities } from "@/components/Home/TopCities";
+// import { TopCities } from "@/components/Home/TopCities";
+import TopCities from "@/components/Home/TopCities";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -148,15 +149,15 @@ export default function Home() {
           href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
           rel="stylesheet"
         ></link> */}
-
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=VT323&display=swap"
-          rel="stylesheet"
-        ></link>
       </Head>
       <Card />
       <BannerCard />
+
+      <Title my="2rem" order={3}>
+        Top Cities
+      </Title>
       <TopCities />
+
       <Faqs />
     </>
   );

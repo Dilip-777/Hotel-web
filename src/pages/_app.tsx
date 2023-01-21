@@ -41,12 +41,10 @@ export default function App(props: AppProps) {
             colorScheme,
           }}
         >
-          <ScrollArea style={{ height: "100vh" }}>
-            {!(pathname === "/signin" || pathname === "/signup") && <Navbar />}
+          {!(pathname === "/signin" || pathname === "/signup") && <Navbar />}
 
-            <Component {...pageProps} />
-            {!(pathname === "/signin" || pathname === "/signup") && <Footer />}
-          </ScrollArea>
+          <Component {...pageProps} />
+          {!(pathname === "/signin" || pathname === "/signup") && <Footer />}
         </MantineProvider>
       </ColorSchemeProvider>
     </>

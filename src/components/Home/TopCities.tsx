@@ -46,6 +46,8 @@ interface CardProps {
 
 function Card({ image, title, price }: CardProps) {
   const { classes } = useStyles();
+  const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
 
   return (
     <Paper
@@ -54,6 +56,8 @@ function Card({ image, title, price }: CardProps) {
       radius="md"
       sx={{ backgroundImage: `url(${image})` }}
       className={classes.card}
+      // w={340}
+      px="1rem"
     >
       <div>
         <Text className={classes.price} size="xs">
@@ -103,10 +107,9 @@ const data = [
   },
 ];
 
-export function TopCities() {
+export default function TopCities() {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`);
-  const desktop = useMediaQuery(`(max-width: ${theme.breakpoints.lg}px)`);
   const slides = data.map((item) => (
     <Carousel.Slide key={item.title}>
       <Card {...item} />
@@ -114,27 +117,15 @@ export function TopCities() {
   ));
 
   return (
-    <Box
-      mt="3rem"
-      display="flex"
-      sx={{ alignItems: "center", flexDirection: "column" }}
+    <Carousel
+      slideSize="50%"
+      breakpoints={[{ maxWidth: "sm", slideSize: "100%", slideGap: 2 }]}
+      slideGap="xl"
+      align="start"
+      // px="1rem"
+      slidesToScroll={mobile ? 1 : 2}
     >
-      <Title order={3}>Top Cities</Title>
-      <Carousel
-        //   maw={{ xs: 330, sm: 670, md: 800, lg: 950 }}
-        //   maw={{ xs: 300 }}
-        maw={mobile ? 340 : { xs: 300, sm: 670, md: 800, lg: 1200 }}
-        slideSize={mobile ? "100%" : desktop ? "50%" : "33%"}
-        slideGap="md"
-        mt={20}
-        //   loop
-        align="start"
-        slidesToScroll={mobile ? 1 : desktop ? 2 : 3}
-        mx="auto"
-        withIndicators
-      >
-        {slides}
-      </Carousel>
-    </Box>
+      {slides}
+    </Carousel>
   );
 }
